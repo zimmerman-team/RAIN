@@ -1,0 +1,72 @@
+
+
+
+project.php
+
+back_to_results					< &nbsp; Back to results
+project_summary					Project summary					
+no_title_given					No title given
+project_output					Output
+no_summary_found				No summary found
+project_start_date				start date
+project_unknown					unknown
+project_end_date				end date
+project_activity_status			Activity status
+project_total_budget			Total budget
+project_project_updates 		Project updates
+project_share_this_project		Share this project
+project_information				Information
+project_iati_identifier			IATI identifier
+project_sectors					Sector(s)
+no_information_available		No information available	
+project_last_updated			Last updated
+project_funding_organisation	Funding organisation
+project_not_appl_or_no_info		Not applicable or no information available
+project_accountable_organisation	Accountable organisation
+project_implementing_organisation	Implementing organisation
+project_countries				Countries
+project_regions					Regions
+project_export_iati_data		EXPORT IATI DATA
+project_download_data			Select the format and download the data for this project 
+project_embed_code				EMBED CODE
+project_embed_code_text			Embed code &#60;&#47;&#62;
+project_copy					COPY
+project_related_country			RELATED COUNTRY PROJECTS
+project_spending_over_years		Spending over years
+project_view_more_updates		View more updates
+project_no_rsr_updates			No RSR updates.
+project_read_more				... Read more
+
+single-countries.php
+single_countries_projects_in	Projects in
+single_countries_project_list	Project list
+
+projects.php
+
+projects-sort-by				SORT BY:
+projects-results				Results
+projects-results-of				of
+projects-results-of-activities	activities
+projects-budget					Budget
+projects-ascending				Ascending
+projects-descending				Descending
+projects-start-date				Start date
+projects-end-date				End date
+projects-sectors				Sectors
+projects-no-title				No title available
+projects-latest-update			Latest update
+projects-unknown				Unknown
+projects-budget					BUDGET:
+projects-partners				PARTNERS
+
+
+projects-country				Country
+projects-services				Services
+projects-project-type			Project type
+projects-themes					Themes
+projects-sustainability			Sustainability
+projects-map-view				Map view
+projects-list-view				List view
+projects-save					Save
+projects-cancel	 				Cancel
+projects-sectors            	Sector
