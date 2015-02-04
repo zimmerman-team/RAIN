@@ -402,7 +402,7 @@ class ProjectExploreWidget extends WP_Widget
     echo $before_widget;
 
     $post = get_queried_object();
-    $widget_title = str_replace("%s", $post->post_title, $instance['title']);
+    $widget_title = str_replace("%s", $post->post_name, $instance['title']);
     ?>
 
 	<div class="rain-widget">
@@ -886,7 +886,7 @@ class RainAroundTheWorldWidget extends WP_Widget
 			</div>
 
 			<div class="rain-widget-button">
-				<a class="btn btn-default" href="<?php echo home_url(); ?>/partners/">Show partners</a>
+				<a class="btn btn-default" href="<?php echo home_url(); ?>/countries/">Show partners</a>
 			</div>
 		</div>
 	</div>

@@ -283,33 +283,33 @@ $selected = isset( $values['custom_template'] ) ? esc_attr( $values['custom_temp
 
 // HOME
 
-function homepage_block_post_type() {
-	$labels = array(
-		'name'               => _x( 'Homepage blocks', 'Homepage blocks' ),
-		'singular_name'      => _x( 'Homepage block', 'Homepage block' ),
-		'add_new'            => _x( 'Add new', 'homepage block' ),
-		'add_new_item'       => __( 'Add new homepage block' ),
-		'edit_item'          => __( 'Edit homepage block' ),
-		'new_item'           => __( 'New homepage block' ),
-		'all_items'          => __( 'All homepage blocks' ),
-		'view_item'          => __( 'View homepage block' ),
-		'search_items'       => __( 'Search homepage blocks' ),
-		'not_found'          => __( 'No homepage blocks found' ),
-		'not_found_in_trash' => __( 'No homepage blocks found in the Trash' ), 
-		'parent_item_colon'  => '',
-		'menu_name'          => 'Homepage blocks'
-	);
-	$args = array(
-		'labels'        => $labels,
-		'description'   => 'Holds homepage blocks',
-		'public'        => true,
-		'menu_position' => 6,
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'),
-		'has_archive'   => true
-	);
-	register_post_type( 'homepage-blocks', $args );	
-}
-add_action( 'init', 'homepage_block_post_type' );
+// function homepage_block_post_type() {
+// 	$labels = array(
+// 		'name'               => _x( 'Homepage blocks', 'Homepage blocks' ),
+// 		'singular_name'      => _x( 'Homepage block', 'Homepage block' ),
+// 		'add_new'            => _x( 'Add new', 'homepage block' ),
+// 		'add_new_item'       => __( 'Add new homepage block' ),
+// 		'edit_item'          => __( 'Edit homepage block' ),
+// 		'new_item'           => __( 'New homepage block' ),
+// 		'all_items'          => __( 'All homepage blocks' ),
+// 		'view_item'          => __( 'View homepage block' ),
+// 		'search_items'       => __( 'Search homepage blocks' ),
+// 		'not_found'          => __( 'No homepage blocks found' ),
+// 		'not_found_in_trash' => __( 'No homepage blocks found in the Trash' ), 
+// 		'parent_item_colon'  => '',
+// 		'menu_name'          => 'Homepage blocks'
+// 	);
+// 	$args = array(
+// 		'labels'        => $labels,
+// 		'description'   => 'Holds homepage blocks',
+// 		'public'        => true,
+// 		'menu_position' => 6,
+// 		'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'),
+// 		'has_archive'   => true
+// 	);
+// 	register_post_type( 'homepage-blocks', $args );	
+// }
+// add_action( 'init', 'homepage_block_post_type' );
 
 
 // service-blocks
@@ -524,7 +524,7 @@ function custom_menu_order($menu_ord) {
 	return array(
 		'index.php', // Dashboard
 		'separator1', // First separator
-		'edit.php?post_type=homepage-blocks',
+		// 'edit.php?post_type=homepage-blocks',
 		'edit.php?post_type=slider',
 		'edit.php?post_type=service-blocks',
 		'edit.php?post_type=project-blocks',
@@ -634,7 +634,7 @@ function rain_remove_wp_seo_meta_box() {
     remove_meta_box( 'wpseo_meta', 'programmes', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'team-members', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'about-items', 'normal' ); // change custom-post-type into the name of your custom post type
-    remove_meta_box( 'wpseo_meta', 'homepage-blocks', 'normal' ); // change custom-post-type into the name of your custom post type
+    // remove_meta_box( 'wpseo_meta', 'homepage-blocks', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'service-blocks', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'news-blocks','normal');
     remove_meta_box( 'wpseo_meta', 'footer', 'normal' ); // change custom-post-type into the name of your custom post type

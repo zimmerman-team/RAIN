@@ -25,7 +25,7 @@
 			<div class="page-full-width-line"></div>
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-11 col-sm-offset-1">
+					<div class="col-sm-12">
 						<div class="heading-holder"><span class="heading">Choose <?php echo $filter_name; ?></span></div>
 					</div>
 				</div>
@@ -33,7 +33,7 @@
 			<div class="page-full-width-line"></div>
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-11 col-sm-offset-1">
+					<div class="col-sm-12">
 						<nav id="<?php echo $filter_code_name; ?>-pagination" class="pagination">
 							
 						</nav>
@@ -43,7 +43,7 @@
 			<!-- <div class="page-full-width-line"></div> -->
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-11 col-sm-offset-1">
+					<div class="col-sm-12">
 
 						<div class="slide-content">
 							<div id="<?php echo $filter_code_name; ?>-filters" class="holder">
@@ -56,7 +56,7 @@
 			<div class="page-full-width-line"></div>
 			<div class="container">
 				<div class="row">
-					<div class="col-sm-11 col-sm-offset-1">
+					<div class="col-sm-12">
 
 						<div class="btns-holder">
 							<div class="holder">

@@ -6,18 +6,19 @@ $even = "even";
 foreach($publication_categories as $pub_cat){
 if ($even == "even"){ $even = "uneven"; } else { $even = "even"; }
 ?>
-<div id="publications-wrapper" class="<?php echo $even; ?>">
+<div class="publications-wrapper <?php echo $even; ?>">
 	<div class="container">
 
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-12">
 				<h1><?php echo $pub_cat->name; ?></h1>
+				<div class="publications-line"></div>
 			</div>
 		</div>
 
 	</div>
 </div>
-<div id="news-archive" class="<?php echo $even; ?>">
+<div id="news-archive" class="publications-archive <?php echo $even; ?>">
 	<div class="publications-archive-ajax-wrapper container">
 
 		<?php 

@@ -1,3 +1,10 @@
+<?php
+/*
+Template Name: Newsletter page
+*/
+?>
+<?php get_header(); 
+?>
 <div id="news-newsletter">
 	<div class="container">
 
@@ -25,3 +32,9 @@
 		
 	</div>
 </div>
+
+
+<?php get_template_part( 'footer', 'sitemap' ); ?>
+<?php get_template_part( 'footer', 'scripts' ); ?>
+
+<?php get_footer(); ?>

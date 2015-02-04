@@ -776,13 +776,45 @@ function OipaMap(){
 			
 			// For 0 -> 9, create markers in a circle
 			var exact_locations = this.selection.exact_locations;
+			var leaflet_polygon = null;
+			if (this.country_id){
+				// get country polygon
+				var url = search_url + "/country-geojson/?reporting_organisation__in=NL-KVK-34200988&countries__in=" + this.country_id;
+				var polygon = null;
+				jQuery.ajax({
+					type: 'GET',
+					async: false,
+					url: url,
+					contentType: "application/json",
+					dataType: 'json',
+					success: function(data){
+						polygon = data.features[0].geometry.coordinates;
+						// var test = L.geoJson(polygon);
+						
+						for (var y = 0;y < polygon.length;y++){
+							for(var i = 0;i < polygon[y].length;i++){
+								polygon[y][i] = [polygon[y][i][1], polygon[y][i][0]];
+							}
+						}
+					}
+				});
+
+				leaflet_polygon = L.polygon(polygon);
+
+			}
 
 			for (var i = 0; i < exact_locations.length; i++) {
 
-				curmarker = L.marker([
+				var latlng = L.latLng([
 					exact_locations[i].latitude,
 					exact_locations[i].longitude
-				], {
+				]);
+
+				if(leaflet_polygon && !(leaflet_polygon.getBounds().contains(latlng))){
+					continue;
+				}
+
+				curmarker = L.marker(latlng, {
 					icon: L.divIcon({
 						// Specify a class name we can refer to in CSS.
 						className: 'country-marker-icon',
@@ -804,6 +836,7 @@ function OipaMap(){
 
 			var bounds = this.get_markers_bounds();
 			this.map.fitBounds(bounds);
+
 		}
 
 		if(this.detail == true){

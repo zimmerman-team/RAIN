@@ -841,7 +841,7 @@ img{
 	background: url('images/block-bg-sand.png');
 }
 
-#news-archive.uneven, #publications-wrapper.uneven{
+#news-archive.uneven, .publications-wrapper.uneven{
 	background: url('images/block-bg-white.png');
 }
 
@@ -1997,8 +1997,21 @@ hr {
 	display: none;
 }	
 
-#publications-wrapper{
+.publications-wrapper{
 	background: url('images/block-bg-sand.png');
+}
+
+.publications-archive .news-item{
+	padding-top: 1.5em;
+}
+
+.publications-archive .news-item-title{
+	min-height: 0;
+	margin-top: 0;
+}
+
+.publications-wrapper h1{
+	padding-bottom: 0.15em;
 }
 
 .skippr > div{
@@ -2263,3 +2276,6 @@ hr {
 	padding-left: 0;
 }
 
+.publications-line{
+	border-bottom: 1px solid #888;
+}

@@ -74,7 +74,7 @@
 
 	if($loop->found_posts == 0){
 		?>
-			<div class="col-sm-4">
+			<div class="col-sm-4" style="margin-top: 20px;">
 				No publications found in this category.
 			</div>
 
@@ -103,7 +103,6 @@
 
 	<div class="col-sm-4">		
 		<div class="news-item">
-			<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('news-thumb'); ?></a>
 			<a href="<?php the_permalink(); ?>"><div class="news-item-title"><?php the_title(); ?></div></a>
 			<div class="news-item-teaser">
 				<?php 

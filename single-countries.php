@@ -155,15 +155,17 @@ Oipa.mainSelection.group_by = "exact_location";
 Oipa.mainSelection.exact_locations = [];
 
 <?php     
-	foreach($exact_locations as $loc){
-		echo 'Oipa.mainSelection.exact_locations.push(' . json_encode($loc) . ');';
-	}
+foreach($exact_locations as $loc){
+	echo 'Oipa.mainSelection.exact_locations.push(' . json_encode($loc) . ');';
+}
 ?>
+
 
 map = new OipaMap();
 map.set_map("explore-map");
 map.selection = Oipa.mainSelection;
 Oipa.maps.push(map);
+map.country_id = "<?php echo $country_id; ?>";
 
 filter = new OipaProjectFilters();
 Oipa.mainFilter = filter;
