@@ -576,7 +576,6 @@ function rain_remove_wp_seo_meta_box() {
     remove_meta_box( 'wpseo_meta', 'programmes', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'team-members', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'about-items', 'normal' ); // change custom-post-type into the name of your custom post type
-    // remove_meta_box( 'wpseo_meta', 'homepage-blocks', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'service-blocks', 'normal' ); // change custom-post-type into the name of your custom post type
     remove_meta_box( 'wpseo_meta', 'news-blocks','normal');
     remove_meta_box( 'wpseo_meta', 'footer', 'normal' ); // change custom-post-type into the name of your custom post type
