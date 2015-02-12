@@ -106,71 +106,71 @@
 
               <div data-slide-id="<?php echo $project_count; ?>" class="row project-focus-item <?php if (($project_count % 2) == 0){ echo "uneven"; } else { echo "even"; } ?> <?php if ($project_count == 0){ echo "active"; } ?>">
                 <div class="col-sm-3">
-                  <div class="row">
-                    <div class="col-sm-12 project-focus-slider-sector">
-                      &nbsp;
+                  <div class="project-focus-image-wrapper">
+                    <div class="project-focus-image-wrapper-middle">
+                      <div class="projects-focus-image">
+                          <?php   
+                          if(!empty($project->documents)) {
+                            $image_url = $project->documents[0]->url;
+                            if (strpos($image_url,'docx') !== false) {
+                							$image_url = get_stylesheet_directory_uri() . '/images/no-project-image.png';
+                						} 
+                            ?>
+                              <img src="<?php echo $image_url; ?>" alt="" />
+                            <?php
+                          } else {
+                            ?>
+                              <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/no-project-image.png" alt="" />
+                            <?php
+                          }
+                          ?>
+                      </div>
                     </div>
                   </div>
-                  <div class="projects-focus-image">
-                      <?php   
-                      if(!empty($project->documents)) {
-                        $image_url = $project->documents[0]->url;
-                        if (strpos($image_url,'docx') !== false) {
-							$image_url = get_stylesheet_directory_uri() . '/images/no-project-image.png';
-						} 
-                        ?>
-                          <img src="<?php echo $image_url; ?>" alt="" />
-                        <?php
-                      } else {
-                        ?>
-                          <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/no-project-image.png" alt="" />
-                        <?php
-                      }
-                      ?>
-                  </div>
-                  
                 </div>
 
                 <div class="col-sm-9">
-                  <div class="row">
-                    <div class="col-sm-12 project-focus-slider-sector">
-                      <?php 
-                      if(!empty($project->sectors)) {
-                        $sep = '';
-                        foreach($project->sectors AS $sector) {
-                          if($sector->code > 1000){
-                            echo  $sep . $sector->name;
-                            $sep = ', ';
-                          }
-                        }   
-                      } else {
-                        echo "No information available";
-                      } ?>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-sm-12">
-                      <div class="projects-focus-title-wrapper">
-                        <?php if (!empty($project->titles)){ 
-                          echo $project->titles[0]->title; 
+                  <div class="inner-fai">
+                    <div class="row">
+                      <div class="col-sm-12 project-focus-slider-sector">
+                        <?php 
+                        if(!empty($project->sectors)) {
+                          $sep = '';
+                          foreach($project->sectors AS $sector) {
+                            if($sector->code > 1000){
+                              echo  $sep . $sector->name;
+                              $sep = ', ';
+                            }
+                          }   
                         } else {
-                          echo get_post_meta( $the_id, 'projects-no-title', true );
-                        }?>
+                          echo "No information available";
+                        } ?>
                       </div>
-                      <div class="projects-focus-description-wrapper">
-                      	<?php 
-                      	if (!empty($project->descriptions)){ 
-		                  if (count($project->descriptions) > 2){
-		                    $desc = $project->descriptions[2];
-		                    $description_text = $desc->description;
-		                    echo substr($description_text, 0, 60) . "...";
-		                    $desc_found = 1; 
-		                  }
-		                }
-		                if ($desc_found == 0) {
-		                  echo "No summary found.";
-		                } 
-		                ?>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-12">
+                        <div class="projects-focus-title-wrapper">
+                          <?php if (!empty($project->titles)){ 
+                            echo $project->titles[0]->title; 
+                          } else {
+                            echo get_post_meta( $the_id, 'projects-no-title', true );
+                          }?>
+                        </div>
+                        <div class="projects-focus-description-wrapper">
+                        	<?php 
+                        	if (!empty($project->descriptions)){ 
+  		                  if (count($project->descriptions) > 2){
+  		                    $desc = $project->descriptions[2];
+  		                    $description_text = $desc->description;
+  		                    echo substr($description_text, 0, 60) . "...";
+  		                    $desc_found = 1; 
+  		                  }
+  		                }
+  		                if ($desc_found == 0) {
+  		                  echo "No summary found.";
+  		                } 
+  		                ?>
+                        </div>
                       </div>
                     </div>
                   </div>

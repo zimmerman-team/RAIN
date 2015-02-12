@@ -45,10 +45,6 @@ Template Name: Media
 						</div>
 					</div>
 
-
-
-
-
 					<div class="row">
 						<div class="col-md-12">
 							<div class="dotted-line-white"></div>
@@ -73,16 +69,12 @@ Template Name: Media
 					<div class="row">
 						<div class="col-md-12">
 							<div class="media-single-content media-manual-wrapper">
-								
 								<img src="<?php echo get_template_directory_uri(); ?>/images/media-brand-manual-preview.png" alt="Brand manual" />
-								<a target="_blank" href="http://www.rainfoundation.org/wp-content/uploads/Brand-Manuel-RAIN-version-0.3.pdf"><img id="media-download-icon" src="<?php echo get_template_directory_uri(); ?>/images/media-download-icon.png" alt="Download brand-manual" /></a>
-								<a target="_blank" href="http://www.rainfoundation.org/wp-content/uploads/Brand-Manuel-RAIN-version-0.3.pdf" class=""><?php echo get_post_meta( get_the_ID(), 'media-dos-and-donts-download-text', true ); ?></a>
-
-								
+								<a target="_blank" href="<?php echo get_post_meta( get_the_ID(), 'media-dos-and-donts-download-url', true ); ?>"><img id="media-download-icon" src="<?php echo get_template_directory_uri(); ?>/images/media-download-icon.png" alt="Download brand-manual" /></a>
+								<a target="_blank" href="<?php echo get_post_meta( get_the_ID(), 'media-dos-and-donts-download-url', true ); ?>" class=""><?php echo get_post_meta( get_the_ID(), 'media-dos-and-donts-download-text', true ); ?></a>
 							</div>
 						</div>
 					</div>
-
 
 					<div class="row">
 						<div class="col-md-12">
@@ -97,7 +89,6 @@ Template Name: Media
 							</div>
 						</div>
 					</div>
-
 
 					<div class="row">
 						<div class="col-md-4">

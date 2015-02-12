@@ -145,12 +145,28 @@ foreach($objects AS $idx=>$project) {
 					<div class="col-sm-3">
 						<?php 
 						if(!empty($project->participating_organisations)) {
+							$sep = ', ';
+							$part_org_text = '';
 
-							$part_org_count = count($project->participating_organisations);
-							echo (string)$part_org_count . " " . get_post_meta( $the_id, 'projects-partners', true );
+							foreach($project->participating_organisations AS $participating_organisation) {
+								if($participating_organisation->role_id == "Implementing"){
+									if(empty($participating_organisation->name)) {
+										$part_org_text .= $participating_organisation->code;
 
-						} else {
-							echo "0 " . get_post_meta( $the_id, 'projects-partners', true );
+									} else {
+										$part_org_text .= $participating_organisation->name;
+									}
+									$part_org_text .= $sep;
+								}
+							}
+							
+							$part_org_text = substr($part_org_text, 0, -2);
+							echo "Implementing: " . $part_org_text;
+							if(empty($part_org_text)){ echo "-";}
+						} 
+
+						if(empty($part_org_text)){
+							echo get_post_meta( get_the_ID(), 'project_not_applicable_or_no_info', true );
 						}
 						?>
 					</div>

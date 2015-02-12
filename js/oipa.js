@@ -803,17 +803,28 @@ function OipaMap(){
 
 			}
 
+			var latlngs = [];
+
 			for (var i = 0; i < exact_locations.length; i++) {
 
-				var latlng = L.latLng([
-					exact_locations[i].latitude,
-					exact_locations[i].longitude
-				]);
-
+				var latlng = L.latLng([ exact_locations[i].latitude, exact_locations[i].longitude]);
 				if(leaflet_polygon && !(leaflet_polygon.getBounds().contains(latlng))){
 					continue;
 				}
 
+				var has_to_continue = false;
+				for (var y = 0; y < latlngs.length; y++) {
+					if(latlngs[y][0] == exact_locations[i].latitude && latlngs[y][1] == exact_locations[i].longitude){
+						has_to_continue = true;
+					} 
+				}
+
+				if(has_to_continue){
+					continue;
+				} else {
+					latlngs.push([ exact_locations[i].latitude, exact_locations[i].longitude]);
+				}
+				
 				curmarker = L.marker(latlng, {
 					icon: L.divIcon({
 						// Specify a class name we can refer to in CSS.

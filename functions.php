@@ -1,6 +1,8 @@
 <?php 
 
 require_once('wp_bootstrap_navwalker.php');
+require_once('rain-custom-fields.php');
+require_once('rain-widgets.php'); 
 
 @ini_set( 'upload_max_size' , '32M' );
 @ini_set( 'post_max_size', '32M');
@@ -135,35 +137,6 @@ function create_publication_categories() {
 add_action( 'init', 'create_publication_categories', 0 );
 
 
-// function project_block_post_type() {
-// 	$labels = array(
-// 		'name'               => _x( 'Project blocks', 'Project blocks' ),
-// 		'singular_name'      => _x( 'Project block', 'Project block' ),
-// 		'add_new'            => _x( 'Add New', 'Project block' ),
-// 		'add_new_item'       => __( 'Add New project block' ),
-// 		'edit_item'          => __( 'Edit project block' ),
-// 		'new_item'           => __( 'New project block' ),
-// 		'all_items'          => __( 'All project blocks' ),
-// 		'view_item'          => __( 'View project block' ),
-// 		'search_items'       => __( 'Search project blocks' ),
-// 		'not_found'          => __( 'No project blocks found' ),
-// 		'not_found_in_trash' => __( 'No project blocks found in the Trash' ), 
-// 		'parent_item_colon'  => '',
-// 		'menu_name'          => 'Project blocks'
-// 	);
-// 	$args = array(
-// 		'labels'        => $labels,
-// 		'description'   => 'Holds project blocks',
-// 		'public'        => true,
-// 		'menu_position' => 6,
-// 		'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'),
-// 		'has_archive'   => true,
-// 		'taxonomies' 	=> array('category'),
-// 	);
-// 	register_post_type( 'project-blocks', $args );	
-// }
-// add_action( 'init', 'project_block_post_type' );
-
 // PROGRAMS
 
 function programmes_post_type() {
@@ -279,37 +252,6 @@ $selected = isset( $values['custom_template'] ) ? esc_attr( $values['custom_temp
 	</p>
 	<?php
 }
-
-
-// HOME
-
-// function homepage_block_post_type() {
-// 	$labels = array(
-// 		'name'               => _x( 'Homepage blocks', 'Homepage blocks' ),
-// 		'singular_name'      => _x( 'Homepage block', 'Homepage block' ),
-// 		'add_new'            => _x( 'Add new', 'homepage block' ),
-// 		'add_new_item'       => __( 'Add new homepage block' ),
-// 		'edit_item'          => __( 'Edit homepage block' ),
-// 		'new_item'           => __( 'New homepage block' ),
-// 		'all_items'          => __( 'All homepage blocks' ),
-// 		'view_item'          => __( 'View homepage block' ),
-// 		'search_items'       => __( 'Search homepage blocks' ),
-// 		'not_found'          => __( 'No homepage blocks found' ),
-// 		'not_found_in_trash' => __( 'No homepage blocks found in the Trash' ), 
-// 		'parent_item_colon'  => '',
-// 		'menu_name'          => 'Homepage blocks'
-// 	);
-// 	$args = array(
-// 		'labels'        => $labels,
-// 		'description'   => 'Holds homepage blocks',
-// 		'public'        => true,
-// 		'menu_position' => 6,
-// 		'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'),
-// 		'has_archive'   => true
-// 	);
-// 	register_post_type( 'homepage-blocks', $args );	
-// }
-// add_action( 'init', 'homepage_block_post_type' );
 
 
 // service-blocks
@@ -642,13 +584,6 @@ function rain_remove_wp_seo_meta_box() {
 add_action( 'add_meta_boxes', 'rain_remove_wp_seo_meta_box', 100000 );
 
 
-// add_action('admin_head', 'disable_icl_metabox',99);
-// function disable_icl_metabox() {
-// 	global $post;
-// 	remove_meta_box('icl_div_config',$post->posttype,'normal');
-// }
-
-
 // Add styles to the WYSIWYG editor 
 add_editor_style('editor-style.css');
 
@@ -712,24 +647,5 @@ register_sidebar( array(
 	'after_title' => '',
 ) );
 
-register_sidebar( array(
-	'name' => 'Countries main bar',
-	'id' => 'countries-main',
-	'description' => 'This is the sidebar on the country main pages',
-	'before_widget' => '',
-	'after_widget' => '',
-	'before_title' => '',
-	'after_title' => '',
-) );
 
-register_sidebar( array(
-	'name' => 'Countries main bar',
-	'id' => 'countries-overview',
-	'description' => 'This is the sidebar on the country overview pages',
-	'before_widget' => '',
-	'after_widget' => '',
-	'before_title' => '',
-	'after_title' => '',
-) );
 
-include( TEMPLATEPATH . '/rain-widgets.php' ); 

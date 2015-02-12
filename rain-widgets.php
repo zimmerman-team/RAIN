@@ -53,38 +53,35 @@ class ServicesWidget extends WP_Widget
 		</div>
     <?php
     $post = get_queried_object();
-    $post_name = $post->post_name;
-    $imp_class = "service-widget-grey";
-    $int_class = "service-widget-grey";
-    $adv_class = "service-widget-grey";
-    if ($post_name == 'intelligence'){
-      $int_class = "";
-    } else if ($post_name == 'implementation'){
-      $imp_class = "";
-    } else if ($post_name == 'advice'){
-      $adv_class = "";  
-    } else {
-      $imp_class = ""; 
-      $int_class = "";
-      $adv_class = "";
+    $cur_post_name = $post->post_name;
+    $add_class_name = "";
+
+    if(in_array($cur_post_name, array("intelligence", "implementation", "advice"))){
+      $add_class_name = "service-widget-grey";
     }
+
+    $args = array( 'post_type' => 'service-blocks', 'posts_per_page' => 20, 'orderby' => 'menu_order title', 'order' => 'DESC' );
+    $loop = new WP_Query( $args );
+    while ( $loop->have_posts() ) : $loop->the_post();
+    global $post;
+    $post_name = $post->post_name;
     ?>
 
-		<a href="<?php echo home_url(); ?>/service/implementation/" class="services-widget-implementation <?php echo $imp_class; ?>">
-			Implementation
+		<a href="<?php the_permalink(); ?>" class="services-widget-<?php echo $post_name; ?> <?php if($post_name != $cur_post_name){ echo $add_class_name; } ?>">
+			<?php the_title(); ?>
 		</a>
-		<a href="<?php echo home_url(); ?>/service/intelligence/" class="services-widget-intelligence <?php echo $int_class; ?>">
-			Intelligence
-		</a>
-		<a href="<?php echo home_url(); ?>/service/advice/" class="services-widget-advice <?php echo $adv_class; ?>">
-			Advice
-		</a>
+
+  <?php endwhile; 
+  wp_reset_postdata();
+  ?>
 		<div class="services-widget-text">
 			<?php echo wpautop($instance['text']); ?>
 		</div>
 	</div>
 
     <?php
+
+
     echo $after_widget;
   }
 
@@ -402,7 +399,7 @@ class ProjectExploreWidget extends WP_Widget
     echo $before_widget;
 
     $post = get_queried_object();
-    $widget_title = str_replace("%s", $post->post_name, $instance['title']);
+    $widget_title = str_replace("%s", ucfirst($post->post_name), $instance['title']);
     ?>
 
 	<div class="rain-widget">
@@ -786,6 +783,8 @@ class RainToolsWidget extends WP_Widget
 
     $title = strip_tags($instance['title']);
     $text = $instance['text'];
+    $button_url = $instance['button_url'];
+    $button_text = $instance['button_text'];
 ?>
   <p>
   	<label for="<?php echo $this->get_field_id('title'); ?>">Title: </label>
@@ -794,6 +793,14 @@ class RainToolsWidget extends WP_Widget
    <p>
   	<label for="<?php echo $this->get_field_id('text'); ?>">Text: </label>
     <textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
+  </p>
+   <p>
+    <label for="<?php echo $this->get_field_id('button_url'); ?>">Tool button url: </label>
+    <input class="widefat" id="<?php echo $this->get_field_id('button_url'); ?>" name="<?php echo $this->get_field_name('button_url'); ?>" type="text" value="<?php echo esc_attr($button_url); ?>" />
+  </p>
+   <p>
+    <label for="<?php echo $this->get_field_id('button_text'); ?>">Tool button text: </label>
+    <input class="widefat" id="<?php echo $this->get_field_id('button_text'); ?>" name="<?php echo $this->get_field_name('button_text'); ?>" type="text" value="<?php echo esc_attr($button_text); ?>" />
   </p>
 <?php
   }
@@ -822,7 +829,7 @@ class RainToolsWidget extends WP_Widget
 			</div>
 
 			<div class="rain-widget-button">
-				<a class="btn btn-default" href="<?php echo home_url(); ?>/tools/">Show tools</a>
+				<a class="btn btn-default" href="<?php echo $instance['button_url'];?>"><?php echo $instance['button_text'];?></a>
 			</div>
 			
 		</div>
@@ -886,7 +893,7 @@ class RainAroundTheWorldWidget extends WP_Widget
 			</div>
 
 			<div class="rain-widget-button">
-				<a class="btn btn-default" href="<?php echo home_url(); ?>/countries/">Show partners</a>
+				<a class="btn btn-default" href="<?php echo home_url(); ?>/partners/">Show partners</a>
 			</div>
 		</div>
 	</div>

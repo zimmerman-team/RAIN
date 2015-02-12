@@ -1,3 +1,8 @@
+<?php
+/*
+Template Name: Tool pages
+*/
+?>
 <?php get_header(); ?>
 
 <div id="news">
