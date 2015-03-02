@@ -108,7 +108,7 @@
 		        	
 
 	        <div id="navbar-languages">
-		  		<?php $languages =  icl_get_languages('skip_missing=0&orderby=KEY&order=DIR&link_empty_to=str'); 
+		  		<?php $languages =  icl_get_languages('skip_missing=0&orderby=KEY&order=DIR&link_empty_to=str');
 		  				$navtext = "";
 						foreach ($languages as &$language) {
 							if (array_key_exists('missing', $language) && $language['missing'] == 0){

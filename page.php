@@ -106,8 +106,6 @@
 		<?php endwhile; ?>
 </div>
 
-
-
-
-
-<?php get_footer(); ?>
+<?php get_template_part( 'footer', 'sitemap' );
+get_template_part( 'footer', 'scripts' );
+get_footer();

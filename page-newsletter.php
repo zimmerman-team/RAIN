@@ -34,6 +34,7 @@ Template Name: Newsletter page
 </div>
 
 
+
 <?php get_template_part( 'footer', 'sitemap' ); ?>
 <?php get_template_part( 'footer', 'scripts' ); ?>
 

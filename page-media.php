@@ -281,4 +281,4 @@ Template Name: Media
 <?php get_template_part( 'footer', 'sitemap' ); ?>
 <?php get_template_part( 'footer', 'scripts' ); ?>
 
-<?php get_footer(); ?>
+<?php get_footer();

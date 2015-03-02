@@ -50,7 +50,19 @@ function rain_add_custom_box() {
   add_meta_box( 'tool-button-text', 'Button text', 'tool_button_text_meta_box', 'tools', 'normal', 'high');
   add_meta_box( 'tool-button-link', 'Button link', 'tool_button_link_meta_box', 'tools', 'normal', 'high');
 
+  add_meta_box( 'publication-url', 'Publication URL', 'publication_url_meta_box', 'publication', 'normal', 'high');
+
 }
+
+
+function publication_url_meta_box( $post ) {
+
+  $field_value = get_post_meta( $post->ID, 'publication-url', false );
+  ?>
+  <input type="text" value="<?php echo $field_value[0]; ?>" name="publication-url" id="publication-url" />  
+  <?php
+}
+
 
 function projects_button_text_meta_box( $post ) {
 
@@ -303,6 +315,10 @@ function rain_save_postdata( $post_id ) {
 
   if ( isset ( $_POST['projects_button_text'] ) ) {
     update_post_meta( $post_id, 'projects_button_text', $_POST['projects_button_text'] );
+  }
+
+  if ( isset ( $_POST['publication-url'] ) ) {
+    update_post_meta( $post_id, 'publication-url', $_POST['publication-url'] );
   }
 
   if ( isset ( $_POST['homepage_column2'] ) ) {

@@ -882,7 +882,7 @@ img{
 
 #news-newsletter{
 	padding-bottom:2.5em;
-	background: url('images/block-bg-sand.png');
+	background: url('images/block-bg-white.png');
 }
 
 #news-newsletter a:hover{
@@ -2299,4 +2299,12 @@ hr {
 
 .publications-line{
 	border-bottom: 1px solid #888;
+}
+
+.publications-archive-wrapper{
+	padding-bottom: 80px;
+}
+
+.publication-items{
+	margin-top: 20px;
 }

@@ -380,7 +380,7 @@ function OipaMainStats(){
 	this.get_total_budget = function(reporting_organisation, data){
 
 		if(data){
-			jQuery("#homepage-total-budget").text("US$" + comma_formatted(data[reporting_organisation]));
+			jQuery("#homepage-total-budget").text("EUR" + comma_formatted(data[reporting_organisation]));
 		} else {
 
 			var url = search_url + 'activity-aggregate-any/?format=json&group_by=reporting-org&aggregation_key=total-budget';
@@ -704,7 +704,7 @@ function OipaMap(){
 							iconSize: [41, 52],
 							iconAnchor: [18, 44],
 						})
-					}).bindPopup('<div class="country-marker-popup-header"><a href="/country/'+data.objects[i].id+'/">'+data.objects[i].name+'</a></div><table><tr><td>PROJECTS:</td><td>' + data.objects[i].total_projects + '</td></tr><tr><td>BUDGET:</td><td>US$' + comma_formatted(data.objects[i].total_budget) + '</td></tr></table><a class="country-marker-popup-zoom" href="/country/'+data.objects[i].id+'/">SHOW PROJECTS IN LIST</a>', { minWidth: 300, maxWidth: 300, offset: L.point(173, 53), closeButton: false, className: "country-popup"})
+					}).bindPopup('<div class="country-marker-popup-header"><a href="/country/'+data.objects[i].id+'/">'+data.objects[i].name+'</a></div><table><tr><td>PROJECTS:</td><td>' + data.objects[i].total_projects + '</td></tr><tr><td>BUDGET:</td><td>EUR ' + comma_formatted(data.objects[i].total_budget) + '</td></tr></table><a class="country-marker-popup-zoom" href="/country/'+data.objects[i].id+'/">SHOW PROJECTS IN LIST</a>', { minWidth: 300, maxWidth: 300, offset: L.point(173, 53), closeButton: false, className: "country-popup"})
 					.addTo(this.map);
 
 					this.markers.push(curmarker);
@@ -730,7 +730,7 @@ function OipaMap(){
 					  iconSize: [150, 44],
 					  iconAnchor: [18, 34],
 				  })
-				}).bindPopup('<table><tr><td>YEAR:</td><td>ALL</td></tr><tr><td>PROJECTS:</td><td><a href="'+site_url+'/region/?region_id='+data.objects[i].id+'">'+data.objects[i].total_projects+'</a></td></tr><tr><td>BUDGET:</td><td>US$'+comma_formatted(data.objects[i].total_budget)+'</td></tr></table>', { minWidth: 300, maxWidth: 300, offset: L.point(215, 134), closeButton: false, className: "region-popup"})
+				}).bindPopup('<table><tr><td>YEAR:</td><td>ALL</td></tr><tr><td>PROJECTS:</td><td><a href="'+site_url+'/region/?region_id='+data.objects[i].id+'">'+data.objects[i].total_projects+'</a></td></tr><tr><td>BUDGET:</td><td>EUR '+comma_formatted(data.objects[i].total_budget)+'</td></tr></table>', { minWidth: 300, maxWidth: 300, offset: L.point(215, 134), closeButton: false, className: "region-popup"})
 				.addTo(this.map);
 
 				this.markers.push(curmarker);

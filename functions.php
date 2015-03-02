@@ -89,9 +89,9 @@ function publications_post_type() {
 		'description'   => 'Holds publication items',
 		'public'        => true,
 		'menu_position' => 6,
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'author'),
+		'supports'      => array( 'title', 'author'),
 		'has_archive'   => true,
-		'taxonomies' 	=> array('category', 'publication_category'),
+		'taxonomies' 	=> array('publication_category'),
 		'yarpp_support' => true
 	);
 	register_post_type( 'publication', $args );	

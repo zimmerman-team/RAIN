@@ -26,7 +26,9 @@
 					</div>
 					<div class="row">
 						<div class="col-md-8">
-							<?php the_content(); ?>
+							<a target="_blank" href="<?php echo get_post_meta( get_the_ID(), 'publication-url', true ); ?>">
+							<div class="publication-item-title"><?php the_title(); ?></div>
+							</a><br>
 						</div>
 					</div>
 
