@@ -457,7 +457,9 @@ if ( function_exists( 'add_image_size' ) ) {
 	add_image_size( 'news-thumb-square', 80, 80, true); 
 	add_image_size( 'team-member-thumb', 80, 120, true); 
 	add_image_size( 'team-member-full', 180, 270, true); 
-	add_image_size( 'project-list-thumb', 220, 124, true); 
+	add_image_size( 'project-list-thumb', 220, 124, true);
+	add_image_size( 'slider-full', 750, 494, true);
+	
 }
 
 function custom_menu_order($menu_ord) {

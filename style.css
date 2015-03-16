@@ -2308,3 +2308,19 @@ hr {
 .publication-items{
 	margin-top: 20px;
 }
+
+.service-downloads a{
+	color: #fff;
+}
+
+.service-downloads a:hover{
+	color: #FAB233;
+}
+
+.home-slider-background-wrapper img{
+	visibility: hidden;
+}
+
+.home-slider-1 .home-slider-background-wrapper img{
+	visibility: visible;
+}

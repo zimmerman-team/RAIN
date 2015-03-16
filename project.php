@@ -260,6 +260,7 @@ $result = json_decode($rsr_project);
 
 				<div class="page-full-width-line"></div>
 
+
 				<?php /*
 				<div class="row">
 					<div class="col-sm-12">
@@ -548,6 +549,23 @@ $result = json_decode($rsr_project);
 				<div class="page-full-width-line"></div>
 
 				<?php } ?>
+
+
+				<?php if (!empty($rsr_id)): ?>
+
+				<div class="row information-table-row">
+					<div class="col-sm-6">
+						<?php echo get_post_meta( get_the_ID(), 'project_akvo_rsr_page', true ); ?>
+					</div>
+					<div class="col-sm-6">
+						<a target="_blank" href="http://rain.akvoapp.org/en/project/<?php echo $rsr_id; ?>/">Go to RSR</a>
+					</div>
+				</div>
+
+				<div class="page-full-width-line"></div>
+
+				<?php endif; ?>
+
 
 
 				<div class="row">

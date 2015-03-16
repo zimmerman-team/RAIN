@@ -54,7 +54,7 @@ while ( have_posts() ) : the_post(); ?>
 									<span> Who is using <?php echo get_post_meta( get_the_ID(), 'service-name', true ); ?>? </span>
 									<?php echo wpautop(get_post_meta( get_the_ID(), 'service-who-is-using', true )); ?>
 								</div>
-								<div class="col-md-6">
+								<div class="col-md-6 service-downloads">
 									<span> Downloads </span>
 									<?php echo wpautop(get_post_meta( get_the_ID(), 'service-download-factsheets', true )); ?>
 								</div>

@@ -25,7 +25,7 @@ Template Name: Home new
 
 					 		<div data-slider-id="<?php echo $slidercount; ?>" class="home-slider-block home-slider-<?php echo $slidercount; ?>">
 					 			<div class="home-slider-background-wrapper">
-					 				<?php the_post_thumbnail(); ?>
+					 				<?php the_post_thumbnail('slider-full'); ?>
 					 			</div>
 					 			<div class="home-slider-title-id-<?php echo $slidercount; ?> home-slider-title">
 					 				<?php the_content(); ?>

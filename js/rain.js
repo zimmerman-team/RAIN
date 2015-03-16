@@ -663,6 +663,7 @@ HomepageSlider.prototype.set_slider = function(div_identifier){
         this.slider = $(div_identifier).skippr({
             autoPlay: false,
         });
+        $('.home-slider-background-wrapper img').css('visibility', 'visible');
         this.transition(2, 1);
 }
 
