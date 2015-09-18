@@ -1,7 +1,9 @@
 <div id="map-wrapper">
 
    
-    <?php if(is_page("projects") || is_page("projets")){ get_template_part( "projects", "lightbox" ); } ?>
+    <?php if(is_page("projects") || is_page("projets")){ 
+        include( get_template_directory() .'/projects-lightbox.php' );
+    } ?>
     <div id="map-filter-overlay">
         <div class="container">
             <div class="row-fluid map-filter-list">

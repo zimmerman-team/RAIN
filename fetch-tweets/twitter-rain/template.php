@@ -112,7 +112,12 @@ $sURLFavoriteButton = esc_url( FetchTweets_Commons::getPluginURL( 'asset/image/f
 ?>
 <div class="rain-widget">
     <div class="rain-widget-title">
-        Follow us on Twitter
+        <?php if (ICL_LANGUAGE_CODE == 'fr'){
+           echo 'Suivez-nous sur Twitter'; 
+        } else {
+           echo 'Follow us on Twitter';
+        }
+        ?>
     </div>
     <div class="rain-widget-content">
         <br>

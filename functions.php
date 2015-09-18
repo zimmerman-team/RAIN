@@ -277,7 +277,7 @@ function service_block_post_type() {
 		'description'   => 'Holds service items',
 		'public'        => true,
 		'menu_position' => 5,
-		'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes'),
+		'supports'      => array( 'title', 'editor', 'thumbnail', 'page-attributes', 'custom-fields'),
 		'has_archive'   => true,
 		'rewrite' => array('slug' => 'service'),
 	);

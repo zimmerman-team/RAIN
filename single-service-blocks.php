@@ -40,22 +40,22 @@ while ( have_posts() ) : the_post(); ?>
 							<hr>
 							<div class="row">
 								<div class="col-md-6">
-									<span> Description </span>
+									<span> <?php echo get_post_meta( get_the_ID(), 'description', true ); ?> </span>
 									<?php echo wpautop(get_post_meta( get_the_ID(), 'service-description', true )); ?>
 								</div>
 								<div class="col-md-6">
-									<span> Features </span>
+									<span> <?php echo get_post_meta( get_the_ID(), 'features', true ); ?> </span>
 									<?php echo wpautop(get_post_meta( get_the_ID(), 'service-features', true )); ?>
 								</div>
 							</div>
 							<hr>
 							<div class="row">
 								<div class="col-md-6">
-									<span> Who is using <?php echo get_post_meta( get_the_ID(), 'service-name', true ); ?>? </span>
+									<span> <?php echo get_post_meta( get_the_ID(), 'who-is-using', true ); ?> <?php echo get_post_meta( get_the_ID(), 'service-name', true ); ?>? </span>
 									<?php echo wpautop(get_post_meta( get_the_ID(), 'service-who-is-using', true )); ?>
 								</div>
 								<div class="col-md-6 service-downloads">
-									<span> Downloads </span>
+									<span> <?php echo get_post_meta( get_the_ID(), 'downloads', true ); ?> </span>
 									<?php echo wpautop(get_post_meta( get_the_ID(), 'service-download-factsheets', true )); ?>
 								</div>
 							</div>
@@ -90,7 +90,7 @@ while ( have_posts() ) : the_post(); ?>
 
 				  <div class="rain-widget">
 				    <div class="rain-widget-title">
-				      Best practices
+				      <?php echo get_post_meta( get_the_ID(), 'best-practices', true ); ?>
 				    </div>
 				    <div class="rain-widget-text">
 				      

@@ -383,6 +383,14 @@ class ProjectExploreWidget extends WP_Widget
   	<label for="<?php echo $this->get_field_id('text'); ?>">Text: </label>
     <textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
   </p>
+   <p>
+    <label for="<?php echo $this->get_field_id('explore-activities'); ?>">Explore activities: </label>
+    <input class="widefat" id="<?php echo $this->get_field_id('explore-activities'); ?>" name="<?php echo $this->get_field_name('explore-activities'); ?>" type="text" value="<?php echo $instance['explore-activities']; ?>" />
+  </p>
+   <p>
+    <label for="<?php echo $this->get_field_id('explore-link'); ?>">Explore activities link: </label>
+    <input class="widefat" id="<?php echo $this->get_field_id('explore-link'); ?>" name="<?php echo $this->get_field_name('explore-link'); ?>" type="text" value="<?php echo $instance['explore-link']; ?>" />
+  </p>
 <?php
   }
  
@@ -414,7 +422,9 @@ class ProjectExploreWidget extends WP_Widget
 			<?php echo wpautop($instance['text']); ?>
 		</div>
 		<div class="rain-widget-button">
-			<a class="btn btn-default" href="<?php echo home_url(); ?>/projects/">Explore activities</a>
+			<a class="btn btn-default" href="<?php echo $instance['explore-link']; ?>">
+        <?php echo $instance['explore-activities']; ?>
+      </a>
 		</div>
 	</div>
 
@@ -698,6 +708,10 @@ class ProjectFocusWidget extends WP_Widget
   	<label for="<?php echo $this->get_field_id('title'); ?>">Title: </label>
   	<input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" />
   </p>
+  <p>
+    <label for="<?php echo $this->get_field_id('next-project-update'); ?>">Next project update: </label>
+    <input class="widefat" id="<?php echo $this->get_field_id('next-project-update'); ?>" name="<?php echo $this->get_field_name('next-project-update'); ?>" type="text" value="<?php echo $instance['next-project-update']; ?>" />
+  </p>
 <?php
   }
  
@@ -720,7 +734,7 @@ class ProjectFocusWidget extends WP_Widget
 			<?php echo $instance['title']; ?>
 
       <div class="pf-next-project">
-        Next project update
+        <?php echo $instance['next-project-update']; ?>
         <div class="pf-next-project-counter">
           <input class="knob second" data-width="29" data-min="0" data-max="10" data-displayPrevious=true data-fgColor="#999" data-readOnly="true" value="10" data-bgcolor="#EEE">
         </div>
@@ -867,6 +881,14 @@ class RainAroundTheWorldWidget extends WP_Widget
   	<label for="<?php echo $this->get_field_id('text'); ?>">Text: </label>
     <textarea class="widefat" rows="16" cols="20" id="<?php echo $this->get_field_id('text'); ?>" name="<?php echo $this->get_field_name('text'); ?>"><?php echo $text; ?></textarea>
   </p>
+  <p>
+    <label for="<?php echo $this->get_field_id('show-partners'); ?>">Show partners: </label>
+    <input class="widefat" id="<?php echo $this->get_field_id('show-partners'); ?>" name="<?php echo $this->get_field_name('show-partners'); ?>" type="text" value="<?php echo $instance['show-partners']; ?>" />
+  </p>
+  <p>
+    <label for="<?php echo $this->get_field_id('show-partners-link'); ?>">Show partners link: </label>
+    <input class="widefat" id="<?php echo $this->get_field_id('show-partners-link'); ?>" name="<?php echo $this->get_field_name('show-partners-link'); ?>" type="text" value="<?php echo $instance['show-partners-link']; ?>" />
+  </p>
 <?php
   }
  
@@ -893,7 +915,7 @@ class RainAroundTheWorldWidget extends WP_Widget
 			</div>
 
 			<div class="rain-widget-button">
-				<a class="btn btn-default" href="<?php echo home_url(); ?>/partners/">Show partners</a>
+				<a class="btn btn-default" href="<?php echo $instance['show-partners-link'];?>"><?php echo $instance['show-partners']; ?></a>
 			</div>
 		</div>
 	</div>

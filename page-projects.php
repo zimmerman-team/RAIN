@@ -15,11 +15,9 @@ $projects_id = get_the_ID();
 
 <div id="main-content-wrapper">
 
-	<?php
+    <?php while ( have_posts() ) : the_post(); ?>
 
-	$args = array( 'post_type' => 'project-blocks', 'posts_per_page' => 1, 'orderby' => 'menu_order title', 'order' => 'DESC' );
-	$loop = new WP_Query( $args );
-	while ( $loop->have_posts() ) : $loop->the_post();
+	<?php
 
 	include( get_template_directory() .'/projects-functions.php' );
 		oipa_generate_results($objects, $meta, null, true); 
